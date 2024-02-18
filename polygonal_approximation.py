@@ -23,6 +23,9 @@ def group_windows(image_path, show_image = True):
             continue
 
         epsilon = 0.02 * cv2.arcLength(contour, True)
+        # The epsilon value is used to control the level of smoothing in the process of converting the contour into an approximate polygon.
+        # High epsilon values are generally preferred to obtain simpler shapes with fewer edges, while low epsilon values are used to obtain more detailed shapes with more edges.
+
         approx = cv2.approxPolyDP(contour, epsilon, True)
         # Quadrilateral contours are (approximately) detected (using cv2.approxPolyDP).
         # If a contour has 4 sides, it is considered a quadrilateral.
