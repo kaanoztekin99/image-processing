@@ -15,13 +15,14 @@ for corner in corners:
     x, y = corner.ravel()
     cv2.circle(image, (x, y), 3, (255, 0, 0), -1)
 
-# Köşeleri y ekseninde gruplayarak çizgiler oluştur
-corners_sorted = sorted(corners, key=lambda x: x[0][1])  # Y koordinatına göre sırala
-for i in range(len(corners_sorted) - 1):
-    x1, y1 = corners_sorted[i].ravel()
-    x2, y2 = corners_sorted[i + 1].ravel()
-    if abs(y2 - y1) < 10:  # Y ekseninde yakın olan köşeleri birleştir
-        cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+# Köşeleri x ekseni boyunca gruplayarak çizgiler oluştur
+threshold = 1  # x ekseni boyunca birleştirme eşiği
+for i in range(len(corners)):
+    for j in range(i + 1, len(corners)):
+        x1, y1 = corners[i].ravel()
+        x2, y2 = corners[j].ravel()
+        if abs(x2 - x1) < threshold:  # x ekseni boyunca yakın olan köşeleri birleştir
+            cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
 # Sonuçları göster
 cv2.imshow("Connected Corners", image)
