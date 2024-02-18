@@ -6,7 +6,9 @@ import numpy as np
 def detect_lines(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     edges = cv2.Canny(gray, 50, 150, apertureSize=3)
+    # Canny Parameters: image, low threshold, high threshold, aperture size (sobel gradiant calculation), L2 Gradient norm (optional: True or False)
     lines = cv2.HoughLinesP(edges, 1, np.pi/180, threshold=100, minLineLength=100, maxLineGap=10)
+    # Hough Line parameters: image, rho, theta, threshold, minLineLength, maxLineGap
     return lines, edges
 
 def find_longest_line(lines):
