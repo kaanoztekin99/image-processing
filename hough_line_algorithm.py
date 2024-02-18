@@ -24,9 +24,12 @@ def count_windows_and_floors(image, lines):
     window_count = 0
     floor_count = 0
     longest_line = find_longest_line(lines)
-    x1, y1, x2, y2 = longest_line[0]
-    max_y = max(y1, y2)
-    min_y = min(y1, y2)
+    x1_longest, y1_longest, x2_longest, y2_longest = longest_line[0]
+    max_y = max(y1_longest, y2_longest)
+    min_y = min(y1_longest, y2_longest)
+
+    # The height range of windows can often be different, so it may not be sufficient to compare the detected lines with the longest line.
+    # A specific height range or other characteristics may also need to be taken into account to determine the lines considered as windows.
 
     for line in lines:
         x1, y1, x2, y2 = line[0]
