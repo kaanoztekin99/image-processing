@@ -10,3 +10,9 @@
 
 
 * Kapalı Poligon Algılama (Polygon Approximation): Konturlar genellikle düzensiz ve pürüzlü olabilir, bu nedenle kapalı poligonlar gibi daha basitleştirilmiş şekillere dönüştürülürler. Kapalı poligonlar, nesnelerin daha anlaşılır ve işlenebilir bir temsilini sağlar. Bu, nesneleri tanıma ve analiz etme sürecini kolaylaştırabilir.
+
+
+* Hough Line dönüşümü, görüntüdeki doğrusal yapıları (çizgileri) tespit etmek için kullanılır. Bu dönüşüm, özellikle kenar algılama gibi işlemlerden elde edilen veriler üzerinde çalışır. Kenar algılama, görüntüdeki keskin değişiklikleri (genellikle obje sınırlarında) bulur ve bu değişiklikler genellikle çizgileri temsil eder.
+
+
+* Hough Line dönüşümü, bu kenar bilgilerini alır ve bu çizgilerin parametrelerini (genellikle rho ve theta) kullanarak doğrusal yapıları tanımlar. Bu şekilde, bir görüntüdeki çizgileri belirleyebilir ve çizgilerin konumunu ve yönünü elde edebiliriz.
