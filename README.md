@@ -1,5 +1,4 @@
 # image-processing
-image-processing
 
 * Görüntüyü Gri Tonlama Dönüştürmek (Grayscale): Görüntüyü gri tonlamaya dönüştürmek, renk bilgisini koruyarak hesaplama yapmayı kolaylaştırır. Gri tonlamaya dönüştürme işlemi, görüntüdeki her pikselin tek bir yoğunluk değerine (0-255 arasında) sahip olduğu bir görüntü oluşturur. Bu, görüntü üzerindeki kenarları ve konturları daha iyi algılamak için önemlidir, çünkü renk bilgisiyle uğraşmamız gerekmez.
 
