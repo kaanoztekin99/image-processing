@@ -25,3 +25,14 @@ Canny kenar algılama, görüntüdeki kenarları tespit etmek için kullanılan 
 ## Hough Line dönüşümü
 * Görüntüdeki doğrusal yapıları (çizgileri) tespit etmek için kullanılır. Bu dönüşüm, özellikle kenar algılama gibi işlemlerden elde edilen veriler üzerinde çalışır. Kenar algılama, görüntüdeki keskin değişiklikleri (genellikle obje sınırlarında) bulur ve bu değişiklikler genellikle çizgileri temsil eder.
 * Hough Line dönüşümü, bu kenar bilgilerini alır ve bu çizgilerin parametrelerini (genellikle rho ve theta) kullanarak doğrusal yapıları tanımlar. Bu şekilde, bir görüntüdeki çizgileri belirleyebilir ve çizgilerin konumunu ve yönünü elde edebiliriz.
+
+## Shi-Tomasi köşe tespit yöntemi
+* Shi-Tomasi köşe tespit yöntemi, görüntüdeki önemli köşeleri tespit etmek için kullanılan bir algoritmadır. Bu yöntem, Harris köşe tespit yöntemine benzer şekilde çalışır, ancak Harris yönteminden daha duyarlı ve daha az hesaplama gerektirir. Shi-Tomasi yöntemi, görüntüdeki köşeleri belirlemek için bir "köşe uygunluk" skoru kullanır.
+
+* Shi-Tomasi köşe tespit yönteminin parametreleri şunlardır:
+
+* image: Gri tonlamalı giriş görüntüsü.
+* maxCorners: Tespit edilecek maksimum köşe sayısı. Eğer köşe sayısı bu değerden fazla ise en güçlü olanlar seçilir.
+* qualityLevel: Kabul edilebilir köşe uygunluk skoru eşiği. Bu değerden düşük olan köşeler göz ardı edilir.
+* minDistance: Minimum euclidean mesafe. Bu mesafeden daha yakın köşeler yok sayılır.
+* Shi-Tomasi köşe tespit yöntemi, belirli bir köşenin "köşe olma" olasılığını hesaplar ve belirli bir eşik değerinden büyük olan köşeleri tespit eder. Bu yöntem, genellikle görüntüdeki özellikli noktaların (köşelerin) bulunması gereken uygulamalarda kullanılır, örneğin görüntü eşleştirme ve izleme gibi.
